@@ -1,4 +1,14 @@
 #!/usr/bin/env sh
+###
+ # @Author: huangziyi
+ # @Date: 2022-05-07 13:39:27
+ # @LastEditors: huangziyi
+ # @LastEditTime: 2022-05-07 14:13:48
+ # @FilePath: \poowicat.github.io\deploy.sh
+ # @Description: 
+ # 
+ # Copyright (c) 2022 by poowicat, All Rights Reserved. 
+### 
 
 # 确保脚本抛出遇到的错误
 set -e
@@ -10,14 +20,14 @@ npm run build
 cd docs/.vuepress/dist
 
 # deploy to github pages
-# echo 'https://poowicat.github.io/' > CNAME
+echo 'https://poowicat.github.io/' > CNAME
 
-if [ -z "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" ]; then
+if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
-  githubUrl=git@github.com:poowicat/poowicat.github.io.git
+  githubUrl=git@github.com:xugaoyi/vuepress-theme-vdoing.git
 else
   msg='来自github actions的自动部署'
-  githubUrl=https://poowicat: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@github.com/poowicat/poowicat.github.io.git
+  githubUrl=https://poowicat:${GITHUB_TOKEN}@github.com/xugaoyi/vuepress-theme-vdoing.git
   git config --global user.name "poowicat"
   git config --global user.email "2496248975@qq.com"
 fi
@@ -25,7 +35,7 @@ git init
 git add -A
 git commit -m "${msg}"
 # git push -f $githubUrl master:gh-pages # 推送到github gh-pages分支
-git push -f git@github.com:poowicat/poowicat.github.io.git main:gh-pages # 推送到github gh-pages分支
+git push -f git@github.com:poowicat/poowicat.github.io.git master:gh-pages # 推送到github gh-pages分支
 # deploy to coding pages
 # echo 'www.xugaoyi.com\nxugaoyi.com' > CNAME  # 自定义域名
 # echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件

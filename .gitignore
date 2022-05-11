@@ -16,3 +16,7 @@ urls.txt
 
 # mac
 .DS_Store
+
+
+# 历史文件
+.history

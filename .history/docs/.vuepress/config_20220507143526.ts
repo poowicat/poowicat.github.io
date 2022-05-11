@@ -1,12 +1,12 @@
 /**
- * 提示：如您想使用JS版本的配置文件可参考：https://github.com/poowicat/vuepress-theme-vdoing/tree/a2f03e993dd2f2a3afdc57cf72adfc6f1b6b0c32/docs/.vuepress
+ * 提示：如您想使用JS版本的配置文件可参考：https://github.com/xugaoyi/vuepress-theme-vdoing/tree/a2f03e993dd2f2a3afdc57cf72adfc6f1b6b0c32/docs/.vuepress
  */
 import { resolve } from 'path'
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
 import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
-// import htmlModules from './config/htmlModules' // 自定义插入的html块
+import htmlModules from './config/htmlModules' // 自定义插入的html块
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
   theme: 'vdoing', // 使用npm主题包
@@ -71,7 +71,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: '/ui/',
         items: [
           { text: 'Open-CV', link: '/pages/8309a5b876fc95e3/' },
-          // { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
+          { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
         ],
       },
       {
@@ -92,7 +92,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: '面试', link: '/pages/aea6571b7a8bae86/' },
           { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
           { text: '实用技巧', link: '/pages/baaa02/' },
-          // { text: '友情链接', link: '/friends/' },
+          { text: '友情链接', link: '/friends/' },
         ],
       },
       { text: '关于', link: '/about/' },
@@ -117,14 +117,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
-    repo: 'poowicat/poowicat.github.io', // 导航栏右侧生成Github链接
+    repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
     editLinks: true, // 启用编辑
     editLinkText: '编辑',
 
-    //*** 以下是Vdoing主题相关配置，文档：https://doc.poowicat.com/pages/a20ce8/ ***//
+    //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
 
     // category: false, // 是否打开分类功能，默认true
     // tag: false, // 是否打开标签功能，默认true
@@ -132,9 +132,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // categoryText: '随笔', // 碎片化文章（_posts文件夹的文章）预设生成的分类值，默认'随笔'
 
     // bodyBgImg: [
-    //   'https://cdn.jsdelivr.net/gh/poowicat/image_store/blog/20200507175828.jpeg',
-    //   'https://cdn.jsdelivr.net/gh/poowicat/image_store/blog/20200507175845.jpeg',
-    //   'https://cdn.jsdelivr.net/gh/poowicat/image_store/blog/20200507175846.jpeg'
+    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
+    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175845.jpeg',
+    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175846.jpeg'
     // ], // body背景大图，默认无。 单张图片 String | 多张图片 Array, 多张图片时每隔15秒换一张。
     // bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0.1~ 1.0, 默认0.5
     // titleBadge: false, // 文章标题前的图标是否显示，默认true
@@ -157,30 +157,30 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'poowicat', // 必需
-      link: 'https://github.com/poowicat', // 可选的
+      name: 'xugaoyi', // 必需
+      link: 'https://github.com/xugaoyi', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://userblink.csdnimg.cn/20220511/poowicat/pic/ed19edb7fd8f4cb3855f2b6c58ead0f9-0.png?x-oss-process=image/interlace,1/format,jpg/resize,w_375',
-      name: 'poowicat',
-      slogan: '深度学习界的小学生',
+      avatar: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
+      name: 'Evan Xu',
+      slogan: '前端界的小学生',
     },
 
-    // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.poowicat.com/pages/a20ce8/#social)
+    // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
     social: {
       // iconfontCssFile: '//at.alicdn.com/t/xxx.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自己添加。阿里图片库：https://www.iconfont.cn/
       icons: [
         {
           iconClass: 'icon-youjian',
           title: '发邮件',
-          link: 'mailto:2496248975@qq.com',
+          link: 'mailto:894072666@qq.com',
         },
         {
           iconClass: 'icon-github',
           title: 'GitHub',
-          link: 'https://github.com/poowicat',
+          link: 'https://github.com/xugaoyi',
         },
         {
           iconClass: 'icon-erji',
@@ -200,13 +200,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: 'poowicat',
-        link: 'https://github.com/poowicat'
+        name: 'xugaoyi',
+        link: 'https://github.com/xugaoyi'
       }
     },
 
     // 自定义hmtl(广告)模块
-    // htmlModules
+    htmlModules
   },
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
@@ -216,7 +216,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'meta',
       {
         name: 'keywords',
-        content: '个人技术博客',
+        content: '前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown',
       },
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
@@ -271,7 +271,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           },
           {
             title: '通过百度搜索本站的',
-            frontUrl: 'https://www.baidu.com/s?wd=site%3Apoowicat.com%20',
+            frontUrl: 'https://www.baidu.com/s?wd=site%3Axugaoyi.com%20',
           },
         ],
       }
@@ -317,8 +317,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           clientID: 'a6e1355287947096b88b',
           clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
           repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'poowicat', // GitHub仓库所有者
-          admin: ['poowicat'], // 对仓库有写权限的人
+          owner: 'xugaoyi', // GitHub仓库所有者
+          admin: ['xugaoyi'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
