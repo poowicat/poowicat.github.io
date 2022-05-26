@@ -3,6 +3,7 @@ title: 浅谈深度学习中Batch_size的大小对模型训练的影响
 date: 2022-05-11 14:24:43
 permalink: /pages/ac613e/
 sidebar: auto
+sticky: 1
 categories:
   - 随笔
 tags:
@@ -55,6 +56,7 @@ Batch_size=1，也就是每次只训练一个样本。这就是<u>在线学习</
 
 一般而言，根据GPU显存，<u>设置为最大</u>，而且一般要求是８的倍数（比如16，32，64），GPU内部的并行计算效率最高。
 或者选择一部分数据，设置几个８的倍数的Batch_Size，看看loss的下降情况，再选用效果更好的值。
+![image](https://cdn.jsdelivr.net/gh/poowicat/pic_store@main/blog/image.4s8e5fgdgc20.webp)
 
 ### 总结：
 
